@@ -1,6 +1,7 @@
 import requests
 import time
 import pandas as pd
+import numpy as np
 
 # cursor method to get all papers, recommended by ChatGPT
 def fetch_all_openalex_results(url,params,delay=0.5):
@@ -60,36 +61,45 @@ def get_citation_counts(work_id):
 sourcedict = {'Physics in Medicine and Biology':'S20241394'}
 source_id  = sourcedict['Physics in Medicine and Biology']
 
-YEAR_QUERY=2001
+YEAR_START=1956
+YEAR_END=2019
 
-url = 'https://api.openalex.org/works'
-params = {
-    'filter':f'primary_location.source.id:{source_id},from_publication_date:{YEAR_QUERY}-01-01,to_publication_date:{YEAR_QUERY}-12-31',
-    'per-page':200
-}
+years = np.arange(YEAR_START,YEAR_END+1)
 
-rows = []
+for year in years:
+    year = int(year)
+    url = 'https://api.openalex.org/works'
+    params = {
+        'filter':f'primary_location.source.id:{source_id},from_publication_date:{year}-01-01,to_publication_date:{year}-12-31',
+        'per-page':200
+    }
 
-for work in fetch_all_openalex_results(url,params):
-    name = work['display_name']
-    alexid = work['id'][21:]
+    rows = []
 
-    authorships = work.get('authorships',[])
-    if authorships:
-        first_author = authorships[0].get("author",{}).get('display_name')
-    else:
-        first_author = ''
-    citations,citations5yrs = get_citation_counts(alexid)
-    
-    rows.append({
-        'title':name,
-        'first author':first_author,
-        'openalex_id':alexid,
-        'total citations':citations,
-        'citations_5yr':citations5yrs
-    })
+    for work in fetch_all_openalex_results(url,params):
+        name = work['display_name']
+        alexid = work['id'][21:]
 
-    print(rows[-1])
+        authorships = work.get('authorships',[])
+        if authorships:
+            first_author = authorships[0].get("author",{}).get('display_name')
+            num_authors = len(authorships)
+        else:
+            first_author = ''
+            num_authors = ''
+        citations,citations5yrs = get_citation_counts(alexid)
+        
+        rows.append({
+            'title':name,
+            'year':year,
+            'first author':first_author,
+            'total authors':num_authors,
+            'openalex_id':alexid,
+            'total citations':citations,
+            'citations_5yr':citations5yrs
+        })
 
-df = pd.DataFrame(rows)
-df.to_csv(f'medphys-openalex{YEAR_QUERY}.csv',index=False)
+        print(rows[-1])
+
+    df = pd.DataFrame(rows)
+    df.to_csv(f'spreadsheets/medphys-openalex{year}.csv',index=False)
