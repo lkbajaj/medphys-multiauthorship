@@ -1,0 +1,260 @@
+title,first author,openalex_id,total citations,citations_5yr
+Medical image registration,David Hill,W2140139548,2050,415
+Three-dimensional ultrasound imaging,Aaron Fenster,W2148234126,763,163
+Polymer gels for magnetic resonance imaging of radiation dose distributions at normal room atmosphere,Peter Fong,W2090838842,384,83
+Performance evaluation of the microPET P4: a PET system dedicated to animal imaging,Yuan‐Chuan Tai,W2160463229,303,145
+<i>In vivo</i>cerebrovascular measurement combining diffuse near-infrared absorption and correlation spectroscopies,Cecil Cheung,W2124835578,299,61
+The GSF family of voxel phantoms,Nina Petoussi-Henss,W2092218552,273,55
+The interaction between Terahertz radiation and biological tissue,S W Smye,W1965721949,266,55
+Determining changes in NIR absorption using a layered model of the human head,Jens Steinbrink,W1998195634,254,65
+Changes in the dielectric properties of rat tissue as a function of age at microwave frequencies,Azadeh Peyman,W2108464088,238,37
+In-beam PET measurements of β<sup>+</sup>radioactivity induced by proton beams,Katia Parodi,W2023921468,234,27
+Monte Carlo simulation of electron beams from an accelerator head using PENELOPE,Josep Sempau,W2000076883,228,39
+Temporal backward projection of optoacoustic pressure transients using Fourier transform methods,Kornel P. Köstli,W2046277770,222,29
+Respiratory effects in human functional magnetic resonance imaging due to bulk susceptibility changes,Devesh Raj,W2021260330,209,19
+Tissue engineering: the biophysical background,A. S. G. Curtis,W2006482556,196,62
+Clinically feasible reconstruction of 3D whole-body PET/CT data using blurred anatomical labels,Claude Comtat,W2024903557,180,42
+Dose resolution in radiotherapy polymer gel dosimetry: effect of echo spacing in MRI pulse sequence,Clive Baldock,W2108160232,170,60
+<i>In vivo</i>optical characterization of human tissues from 610 to 1010 nm by time-resolved reflectance spectroscopy,Alessandro Torricelli,W1991918711,164,49
+X-ray scattering from human breast tissues and breast-equivalent materials,M.E. Poletti,W2066996640,160,25
+Total variation norm for three-dimensional iterative reconstruction in limited view angle tomography,Mikael Persson,W1969899894,156,12
+Conductivity of living intracranial tissues,Juha Latikka,W2011363973,155,17
+"A CCD-based optical CT scanner for high-resolution 3D imaging of radiation dose distributions: equipment specifications, optical simulations and preliminary results",Simon Doran,W2157835843,154,30
+Time resolved optical tomography of the human forearm,Elizabeth M. C. Hillman,W2087324007,145,57
+Treatment planning for heavy ion radiotherapy: clinical implementation and application,Oliver Jäkel,W2039539007,142,40
+An experimental study of the dose response of polymer gel dosimeters imaged with x-ray computed tomography,Jamie Trapp,W2023903796,133,50
+Functional CT imaging of angiogenesis in rabbit VX2 soft-tissue tumour,Thomas G. Purdie,W2091543688,122,27
+On the accuracy of monomer/polymer gel dosimetry in the proximity of a high-dose-rate<sup>192</sup>Ir source,Yves De Deene,W2017611365,120,50
+A multiobjective gradient-based dose optimization algorithm for external beam conformal radiotherapy,C. Cotrutz,W2021131581,123,32
+Monitoring of deep brain temperature in infants using multi-frequency microwave radiometry and thermal modelling,J. W. Hand,W2165234568,120,9
+Tumour dosimetry in human liver following hepatic yttrium-90 microsphere therapy,Andrew Campbell,W1999553451,119,18
+Mechanical haemolysis in shock wave lithotripsy (SWL): I. Analysis of cell deformation due to SWL flow-fields,Murtuza Lokhandwalla,W2146395715,115,22
+The MLC tongue-and-groove effect on IMRT dose distributions,Jun Deng,W2001456707,114,43
+Ordered subset reconstruction for x-ray CT,Freek J Beekman,W2043606346,108,24
+Projection access order in algebraic reconstruction technique for diffuse optical tomography,Xavier Intes,W2093659227,108,18
+Detector development for microPET II: a 1 μl resolution PET scanner for small animal imaging,Arion F. Chatziioannou,W2032861454,106,61
+"Biologically effective uniform dose (<i>D</i>) for specification, report and comparison of dose response relations and treatment plans",Panayiotis Mavroidis,W1965348549,106,25
+Dose resolution optimization of polymer gel dosimeters using different monomers.,Martin Lepage,W1805860990,101,44
+Rapidly recomputable EEG forward models for realistic head shapes,J.J. Ermer,W2123191052,100,22
+The accuracy and reliability of a novel handheld dynamic indentation probe for analysing articular cartilage,Richard Appleyard,W2087674878,98,35
+Calibration of three-dimensional ultrasound images for image-guided radiation therapy,Lionel G. Bouchet,W2003949828,97,47
+An SVM classifier to separate false signals from microcalcifications in digital mammograms,Armando Bazzani,W2127014694,97,25
+Directional dependence in film dosimetry: radiographic and radiochromic film,Natalka Suchowerska,W1964896212,87,34
+Quantitative functional lung imaging with synchrotron radiation using inhaled xenon as contrast agent,Sam Bayat,W2027216677,86,16
+The relationship between radiation-induced chemical processes and transverse relaxation times in polymer gel dosimeters,Martin Lepage,W2132200296,86,36
+A focused ultrasound method for simultaneous diagnostic and therapeutic applications—a simulation study,Elisa E. Konofagou,W2108681246,83,35
+Effective dose in paediatric computed tomography,Claire-Louise Chapple,W2073722942,80,15
+A multiple source model for 6 MV photon beam dose calculations using Monte Carlo,Michael K. Fix,W2094163296,81,27
+Monte Carlo dose calculations for dynamic IMRT treatments,Paul Keall,W2036945320,81,32
+Correction of scatter in megavoltage cone-beam CT,Lothar Spies,W2078977199,80,22
+<i>B</i><sub>1</sub>field homogeneity and SAR calculations for the birdcage coil,Tamer S. Ibrahim,W2130590930,80,17
+Modelling of post-irradiation events in polymer gel dosimeters,Martin Lepage,W2025490897,76,24
+The inclusion of capillary distribution in the adiabatic tissue homogeneity model of blood flow,Thiam-Seng Koh,W2034724097,77,12
+Artefacts in multi-echo<i>T</i><sub>2</sub>imaging for high-precision gel dosimetry: III. Effects of temperature drift during scanning,Yves De Deene,W2053723465,75,27
+Specific absorbed fractions from the image-based VIP-Man body model and EGS4-VLSI Monte Carlo code: internal electron emitters,Tzu‐Chieh Chao,W2074723817,75,26
+A diffusion theory model of spatially resolved fluorescence from depth-dependent fluorophore concentrations,Derek E Hyde,W2065252975,74,38
+Microdosimetric properties of ionizing electrons in water: a test of the PENELOPE code system,Robert D. Stewart,W2139216939,73,11
+Accuracy of deconvolution analysis based on singular value decomposition for quantification of cerebral blood flow using dynamic susceptibility contrast-enhanced magnetic resonance imaging,Kenya Murase,W1972508701,73,24
+On the accuracy and effectiveness of dose reconstruction for tomotherapy,J M Kapatoes,W1970085058,71,34
+Influence of CT contrast agents on dose calculations in a 3D treatment planning system,Ulla Ramm,W2059561923,69,7
+Computer-assisted selection of coplanar beam orientations in intensity-modulated radiation therapy*,Andrei Pugachev,W2070979808,70,17
+"Radiation Exposure in Computed Tomography: Fundamentals, Influencing Parameters, Dose Assessment, Optimisation, Scanner Data, Terminology",Donald W. McRobbie,W2060696069,67,26
+Optimization of intensity modulated radiotherapy under constraints for static and dynamic MLC delivery,M. Alber,W1975174344,68,26
+An automated segmentation method for three-dimensional carotid ultrasound images,Abir Zahalka,W2077688032,66,14
+Mechanical haemolysis in shock wave lithotripsy (SWL): II.<i>In vitro</i>cell lysis due to shear,Murtuza Lokhandwalla,W2169626076,65,18
+Comparative behaviour of the Dynamically Penalized Likelihood algorithm in inverse radiation therapy planning,J. Llacer,W1971614725,64,29
+Comparison of the IAEA TRS-398 and AAPM TG-51 absorbed dose to water protocols in the dosimetry of high-energy photon and electron beams,M. Saiful Huq,W2000566918,60,14
+"A theoretical investigation into the role of tumour radiosensitivity, clonogen repopulation, tumour shrinkage and radionuclide RBE in permanent brachytherapy implants of<sup>125</sup>I and<sup>103</sup>Pd",V.P. Antipas,W2032045530,58,16
+A scattering phase function for blood with physiological haematocrit,Martin Hammer,W1973212005,60,10
+Narrow stereotactic beam profile measurements using<b><i>N</i></b>-vinylpyrrolidone based polymer gels and magnetic resonance imaging,E. Pappas,W2041025836,60,21
+Generalization of a model of tissue response to radiation based on the idea of functional subunits and binomial statistics<sup>†</sup>,Pavel Stavrev,W1968359471,59,22
+An optimization method for importance factors and beam weights based on genetic algorithms for radiotherapy treatment planning,Xingen Wu,W2003585211,58,22
+Updating of form factor tabulations for coherent scattering of photons in tissues,A. Tartari,W2020476481,58,10
+"A wide dynamic range, high-spatial-resolution scanning system for radiochromic dye films",Abdulkadir Aydarous,W2067738392,57,22
+Collimator scatter and 2D dosimetry in small proton beams,Peter van Luijk,W2114403211,58,14
+Comparison of modelled and observed<i>in vivo</i>temperature elevations induced by focused ultrasound: implications for treatment planning,Kathleen M. Mahoney,W2005835723,57,14
+Feasibility of automatic marker detection with an a-Si flat-panel imager,Aart J. Nederveen,W2081239061,55,32
+Analysis of<i>B</i><sub>1</sub>field profiles and SAR values for multi-strut transverse electromagnetic RF coils in high field MRI applications,Tamer S. Ibrahim,W1982327895,54,12
+Precise measurement of cerebral blood flow in newborn piglets from the bolus passage of indocyanine green,Roger Springett,W2004949094,52,19
+Melanin and blood concentration in a human skin model studied by multiple regression analysis: assessment by Monte Carlo simulation,Miho Shimada,W1992783375,52,9
+Regional hyperthermia applicator design using FDTD modelling,H. Kroeze,W2002430972,52,12
+A fast algorithm to find optimal controls of multiantenna applicators in regional hyperthermia,Torsten Köhler,W2073310163,52,3
+Simultaneous optimization of cryoprobe placement and thermal protocol for cryosurgery.,Roustem Baissalov,W1482884455,48,11
+A comparison of mammography spectral measurements with spectra produced using several different mathematical models,L E Wilkinson,W2045419859,49,15
+Wide dynamic dose range of VIPAR polymer gel dosimetry,P. Kipouros,W1968934625,48,15
+Interstitial ultrasound heating applicator for MR-guided thermal therapy.,Rajiv Chopra,W1872354477,48,28
+Photothermal coagulation of blood vessels: a comparison of high-speed optical coherence tomography and numerical modelling,Jennifer K. Barton,W2167053783,47,17
+A method of simulating dynamic multileaf collimators using Monte Carlo techniques for intensity-modulated radiation therapy,H Helen Liu,W2170504348,47,18
+The value of the LA48 linear ion chamber array for characterization of intensity-modulated beams,C Martens,W1981199972,46,13
+Monte Carlo based treatment planning for modulated electron beam radiation therapy,Michael Lee,W2009123901,46,16
+Effects of crosslinker fraction in polymer gel dosimeters using FT Raman spectroscopy,Andrew Jirasek,W2094713197,46,20
+Measurement of the electrical properties of human skin and the variation among subjects with certain skin conditions,Takahiro Sunaga,W1981877953,44,2
+Simultaneous MEG and EEG source analysis,Hilde M. Huizenga,W2107384404,44,13
+Calculation of induced current densities for humans by magnetic fields from electronic article surveillance devices,O.P. Gandhi,W2001882121,43,14
+4D maximum<i>a posteriori</i>reconstruction in dynamic SPECT using a compartmental model-based prior,D.J. Kadrmas,W2082571559,42,11
+Derivation of electron and photon energy spectra from electron beam central axis depth dose curves,Jun Deng,W2091894159,42,8
+An apparatus for applying strong longitudinal magnetic fields to clinical photon and electron beams,Dale W. Litzenberg,W2038079452,42,15
+Photon path distribution and optical responses of turbid media: theoretical analysis based on the microscopic Beer-Lambert law,Yutaka Tsuchiya,W2008036946,40,13
+Experimental investigations of the response of films to heavy-ion irradiation,B Spielberger,W2064386592,40,8
+Melanin and blood concentration in human skin studied by multiple regression analysis: experiments,Miho Shimada,W2162417825,40,10
+Determination of absorbed dose calibration factors for therapy level electron beam ionization chambers,M R McEwen,W2169257749,40,16
+"Intensity modulated irradiation of a thorax phantom: comparisons between measurements, Monte Carlo calculations and pencil beam calculations",W. Laub,W1999360962,37,21
+A model of the electrical volume conductor in the region of the eye in the ELF range,G. Lindenblatt,W2057478603,39,3
+Temperature measurement artefacts of thermocouples and fluoroptic probes during laser irradiation at 810 nm,Angela D Reid,W2069928358,39,3
+How accurate is a CT-based dose calculation on a pencil beam TPS for a patient with a metallic prosthesis?,R Roberts,W1985277985,38,11
+Helical antenna arrays for interstitial microwave thermal therapy for prostate cancer: tissue phantom testing and simulations for treatment,Michael D. Sherar,W2043261511,37,15
+The use of an MEG device as 3D digitizer and motion monitoring system,Jan C. de Munck,W2068783581,36,16
+A variable fluence step clustering and segmentation algorithm for step and shoot IMRT,Werner Bär,W2070849079,36,21
+Monte Carlo dose verification for intensity-modulated arc therapy,X Allen Li,W2000085111,36,14
+Non-rigid image registration using a median-filtered coarse-to-fine displacement field and a symmetric correlation ratio,Yiu H Lau,W2073809823,36,12
+Applied Radiobiology and Bioeffect Planning,Roger Dale,W1966591251,40,4
+Rapid SPECT simulation of downscatter in non-uniform media,Hugo W. A. M. de Jong,W2079555688,35,13
+Non-contact measurement of thermal diffusivity in tissue,Sergey A. Telenkov,W2095281006,35,6
+Light dosimetry using the P3 approximation.,Dwayne J. Dickey,W1518103580,34,8
+Experimental<i>p</i><sub>wall</sub>and<i>p</i><sub>cel</sub>correction factors for ionization chambers in low-energy clinical proton beams,Hugo Palmans,W2039195765,34,10
+Angular weighted hybrid cone-beam CT reconstruction for circular trajectories,M. Graß,W2054324425,33,10
+Monte Carlo simulation and dosimetric verification of radiotherapy beam modifiers,Emiliano Spezi,W2080581240,32,12
+Using serial imaging data to model variabilities in organ position and shape during radiotherapy,Ernesto Fontenla,W1970366904,32,12
+Intensity-Modulated Radiation Therapy,Peter Williams,W2020612390,32,19
+Partial signal space projection for artefact removal in MEG measurements: a theoretical analysis,Guido Nolte,W1977290553,30,3
+Radionuclide therapy with bone-seeking compounds: Monte Carlo calculations of dose-volume histograms for bone marrow in trabecular bone,Yngve Kvinnsland,W1978691332,30,9
+On the verification of the incident energy fluence in tomotherapy IMRT,J M Kapatoes,W2015402517,30,12
+Studies of magnetization transfer and relaxation in irradiated polymer gels - interpretation of MRI-based dosimetry,Daniel F. Gochberg,W2031866829,30,8
+Modelling the dosimetric consequences of organ motion at CT imaging on radiotherapy treatment planning,Jeremy Booth,W2033628059,30,15
+Use of multiple layers of Gafchromic film to increase sensitivity,Tsang Cheung,W2134519392,29,13
+Model-based automated detection of mammalian cell colonies,Rok Bernard,W2163227340,27,4
+Monte Carlo simulation of a dynamic MLC based on a multiple source model,Michael K. Fix,W2003815002,28,11
+Experimental examination of a targeted hyperthermia system using inductively heated ferromagnetic microspheres in rabbit kidney,Stephen Jones,W2021806589,27,8
+The effect of seed orientation deviations on the quality of<sup>125</sup>I prostate implants,Jean‐François Corbett,W2046722566,27,8
+Techniques for precision irradiation of the lateral half of the rat cervical spinal cord using 150 MeV protons,Peter van Luijk,W2078570240,28,3
+Determination and validation of the actual 3D temperature distribution during interstitial hyperthermia of prostate carcinoma,Bas W. Raaymakers,W1968248734,27,10
+Point dose calculations using an analytical pencil beam kernel for IMRT plan checking,Yoichi Watanabe,W1973528536,26,8
+Diagnostic features of Alzheimer's disease extracted from PET sinograms,Abdul Sayeed,W1985836829,27,3
+A representation of an NTCP function for local complication mechanisms,M. Alber,W2024777608,27,7
+A survival model for fractionated radiotherapy with an application to prostate cancer,Marco Zaider,W2042194543,27,12
+Practical improvements on photon diffusion theory: application to isotropic scattering,Reindert Graaff,W2121403009,26,11
+Monte Carlo dosimetry of the Buchler high dose rate<sup>192</sup>Ir source,Facundo Ballester,W2272930476,27,10
+Numerical analysis of a model of organ motion using serial imaging measurements from prostate radiotherapy,Ernesto Fontenla,W1967790936,26,12
+Monitoring of cell and tissue responses to photodynamic therapy by electrical impedance spectroscopy,Andrea Molckovsky,W2050237133,25,9
+Dosimetry of<sup>192</sup>Ir sources used for endovascular brachytherapy,N. Reynaert,W2090531773,26,17
+A simple method to control aspects of fluence modulation in IMRT planning,Steve Webb,W2126488026,26,8
+An anisotropic diffusion method for denoising dynamic susceptibility contrast-enhanced magnetic resonance images,Kenya Murase,W2133394145,26,3
+Backscatter factors for mammography calculated with Monte Carlo methods,R Krämer,W2084340364,25,3
+Mathematical model of antibody targeting: important parameters defined using clinical data,A J Green,W2005505052,24,5
+Response characterization of ammonium tartrate solid state pellets for ESR dosimetry with radiotherapeutic photon and electron beams,A. Bartolotta,W2027937843,22,2
+A Monte Carlo approach to electron contamination sources in the Saturne-25 and -41,G. Malataras,W2064279133,23,8
+Variations in skin dose associated with linac bed material at 6 MV x-ray energy,Martin J Butson,W2108601507,24,3
+Rebinning-based algorithms for helical cone-beam CT,Michel Defrise,W2091120706,23,9
+An iterative algorithm for reconstructing incident beam distributions from transmission measurements using electronic portal imaging,Lothar Spies,W2144552078,22,10
+Beat-to-beat analysis method for magnetocardiographic recordings during interventions,Panu Takala,W2012052121,22,13
+Analytical models for time resolved fluorescence spectroscopy in tissues,Mostafa Sadoqi,W2072128730,21,7
+Changes in relative light fluence measured during laser heating: implications for optical monitoring and modelling of interstitial laser photocoagulation,Lee Chin,W2127826606,22,12
+Non-invasive determination of muscle blood flow in the extremities from laser Doppler spectra,Alwin Kienle,W2150053049,22,7
+Analysis of low-angle x-ray scattering peaks from lyophilized biological samples,Omar S. Desouky,W1985919489,21,4
+Configuration space analysis of common cost functions in radiotherapy beam-weight optimization algorithms,C. Rowbottom,W1993985030,21,11
+The START Trial - measurements in semi-anatomical breast and chest wall phantoms,Karen Venables,W2045166279,21,7
+Real-time dose calculation and visualization for the proton therapy of ocular tumours,Karsten Pfeiffer,W2068753355,21,4
+Application of diamond detectors to the dosimetry of 45 and 100 kVp therapy beams: comparison with a parallel-plate ionization chamber and Monte Carlo,R.P. Hugtenburg,W2132255002,21,1
+New experimental apparatus for multimodal resonance imaging: initial EPRI and NMRI experimental results,S Di Giuseppe,W2043475781,20,9
+X-ray emission from a compact hot plasma: applications to radiology and mammography,Christophe Gaudin,W2083844972,19,8
+Use of high-frequency ultrasound imaging to improve delineation of anterior uveal melanoma for proton irradiation,Inder Daftari,W1978129617,19,6
+Monte Carlo aided room scatter studies in the primary air kerma strength standardization of a remote afterloading<sup>192</sup>Ir HDR source,T. Palani Selvam,W2028874164,19,8
+An automated technique for SPECT marker-based image registration in radionuclide therapy,Periklis Papavasileiou,W2042990421,19,10
+Low-angle x-ray scattering from lyophilized blood constituents,Wael M. Elshemey,W2086031711,18,3
+Analysing collimator structure effects in head-scatter calculations for IMRT class fields using scatter raytracing,Shahid A. Naqvi,W2018577211,18,11
+Measurement of the response of Gd2O2S:Tb phosphor to 6 MV x-rays,A G Glendinning,W2030261647,19,4
+Wedge-shaped applicator for additional light delivery and dosimetry in the diaphragmal sinus during photodynamic therapy for malignant pleural mesothelioma,R.L.P. van Veen,W2042572601,17,14
+Cone-beam image reconstruction using spherical harmonics,Katsuyuki Taguchi,W2051119004,18,8
+On-line reconstruction of low boron concentrations by<i>in vivo</i>γ-ray spectroscopy for BNCT,Wilko F.A.R. Verbakel,W2090852756,18,8
+Microencapsulation of carbon particles used as oxygen sensors in EPR oximetry to stabilize their responsiveness to oxygen<i>in vitro</i>and<i>in vivo</i>,Jiang He,W2021455507,17,10
+Calibration of ionization chambers in air kerma length,François Bochud,W2025459720,17,9
+Dose distributions in a human head phantom for neutron capture therapy using moderated neutrons from the 2.5 MeV proton-<sup>7</sup>Li reaction or from fission of<sup>235</sup>U,Kenichi Tanaka,W2076210932,17,7
+A simulation of the effects of set-up error and changes in breast volume on conventional and intensity-modulated treatments in breast radiotherapy,Charlotte L Hector,W2090761578,16,7
+Fluorescence nanotomography using resonance energy transfer: demonstration with a protein-sugar complex,Olaf J. Rolinski,W2094506771,17,9
+Importance of the choice of the collimator for the detection of small lesions in scintimammography: a phantom study,Irène Buvat,W2171298894,17,3
+Quasistatic zooming for regional hyperthermia treatment planning,Jeroen B. van de Kamer,W1969972714,15,10
+Improved delivery efficiency for step and shoot intensity modulated radiotherapy using a fast-tuning magnetron,G. Budgell,W1978460311,15,12
+"Computed Tomography: Fundamentals, System Technology, Image quality and Applications",Terry M. Peters,W1986039732,15,3
+A 3D MRI sequence for computer assisted surgery of the lumbar spine,Caroline L. Hoad,W2000031242,16,7
+Validation of the scanning γ-ray telescope for<i>in vivo</i>dosimetry and boron measurements during BNCT,Wilko F.A.R. Verbakel,W2021325515,16,7
+Calculation of perturbation correction factors for some reference dosimeters in high-energy photon beams with the Monte Carlo code PENELOPE,J. Mazurier,W2063148009,15,7
+A computational study into the use of polyacrylamide gel and A-150 plastic as brain tissue substitutes for boron neutron capture therapy,C. Wojnecki,W2100829671,16,4
+Reduction of computational dimensionality in inverse radiotherapy planning using sparse matrix operations,Paul S. Cho,W2039432217,15,8
+Receptor dose in digital fluorography: a comparison between theory and practice,Nicholas Marshall,W2079677295,15,7
+"Analysis of the effects of the delivery technique on an IMRT plan: comparison for multiple static field, dynamic and NOMOS MIMiC collimation",Joao Seco,W1991367749,14,8
+Comparison of dosimetric standards of Canada and France for photons at<sup>60</sup>Co and higher energies,K R Shortt,W2057688241,14,6
+The practical application of signal detection theory to image quality assessment in x-ray image intensifier-TV fluoroscopy,Nicholas Marshall,W2072790863,14,6
+Dosimetric characteristics of dynamic wedged fields: a Monte Carlo study,Rompin Shih,W1985210373,13,6
+The measurement of<i>k</i><sub>ch</sub>factors for application with the IPEMB very low energy dosimetry protocol,B. Perrin,W2013649936,13,4
+Dosimetry of low-energy protons and light ions,Jürgen Besserer,W2037176019,13,1
+"Air kerma calibration factors and chamber correction values for PTW soft x-ray, NACP and Roos ionization chambers at very low x-ray energies",N.E. Ipe,W2041559074,13,5
+Photothermal determination of optical coefficients of tissue phantoms using an optical fibre probe,Jan Laufer,W2042100435,13,4
+Monte Carlo calculation of dose rate distributions around the Walstam CDC.K-type<sup>137</sup>Cs sources,José Pérez‐Calatayud,W2044578741,13,5
+A film technique for the determination of output factors and end effect times for the Leksell Gamma Knife,Kenneth E. Ekstrand,W2048980207,12,4
+Quantifying effects of lead shielding in electron beams: a Monte Carlo study,Frank Verhaegen,W2061305410,13,6
+Resolution recovery for list-mode reconstruction in SPECT,Luc Bouwens,W2064093331,12,4
+Optimization of the step-and-shoot leaf sequence for delivery of intensity modulated radiation therapy using a variable division scheme,Andrew Beavis,W2068380426,13,10
+Laser thermal therapy: utility of interstitial fluence monitoring for locating optical sensors,William M. Whelan,W2113234748,13,7
+Spatial dependence of the phase in localized bioelectrical impedance analysis,C. A. Shiffman,W1980070848,12,7
+Isotropic beam bouquets for shaped beam linear accelerator radiosurgery,Thomas H. Wagner,W2032057655,12,8
+A spatially varying Compton scatter correction for SPECT utilizing the integral Klein-Nishina cross section,Cathrine Jonsson,W1987757311,11,6
+Optimization of field-cycled PEDRI for<i>in vivo</i>imaging of free radicals,Wiwat Youngdee,W2002948622,11,5
+An intercomparison of IMRT delivery techniques: a case study for breast treatment,Mike Partridge,W2030138804,11,4
+Analysis of treatment parameters for conformal shaped field stereotactic irradiation: comparison with non-coplanar arcs,Brenda Clark,W2047694907,11,6
+A study of equivalent source techniques for high-resolution EEG imaging*,Dezhong Yao,W2069070824,11,6
+There is no IMRT?,S. David Webb,W2071993976,11,6
+Dependence of normal brain integral dose and normal tissue complication probability on the prescription isodose values for γ-knife radiosurgery,Lijun Ma,W2094434493,11,5
+On a possible mechanism for peripheral nerve stimulation during magnetic resonance imaging scans,Lawrence K. Forbes,W1983044815,10,5
+Quasistatic zooming of FDTD<i>E</i>-field computations: the impact of down-scaling techniques,Jeroen B. van de Kamer,W2027553327,10,5
+Analytical calculation of the portal scatter to primary dose ratio: an EGS4 Monte Carlo and experimental validation at large air gaps,Siobhan Ozard,W2051823234,9,6
+The use of SPAMM to assess spatial distortion due to static field inhomogeneity in dental MRI,Ruth Bridcut,W2121487878,10,5
+Polyhydramnios and arterio-arterial placental anastomoses may beneficially affect monochorionic twin pregnancies,Martin J. C. van Gemert,W1974280872,9,7
+A mathematical comparison of two models of the electrical properties of biological tissues,S W Smye,W1983264091,9,4
+Long-term stability of liquid ionization chambers with regard to their qualification as local reference dosimeters for low dose-rate absorbed dose measurements in water,Jalil Bahar‐Gogani,W2005255774,9,5
+Linear algebraic methods applied to intensity modulated radiation therapy,Steven M. Crooks,W2045056851,9,6
+Dose measurements in inhomogeneous bone/tissue and lung/tissue phantoms for angiography using synchrotron radiation,Nobuteru Nariyama,W2050922713,9,6
+Numerical evaluation of shaped surface coil sensitivity at 63 MHz,T. Prock,W2051301872,9,6
+Automated CT marker segmentation for image registration in radionuclide therapy,Periklis Papavasileiou,W2069273597,9,2
+A Monte Carlo study of dose rate distribution around the specially asymmetric CSM3-a<sup>137</sup>Cs source,José Pérez‐Calatayud,W2004986368,8,5
+Concepts for shuttling multileaf collimators for intensity-modulated radiation therapy,Steve Webb,W2077944097,8,5
+Study on examinee's dose delivered in computed tomography,Tsang Cheung,W2080593465,8,6
+Source potential mapping: a new modality to image neural electric activities,Dezhong Yao,W2034049312,7,5
+Calibrated electro-optic<b><i>E</i></b>-field sensors for hyperthermia applications,Jörn Berger,W2047646102,7,3
+Electrical coupling between smooth muscle and endothelium in arterioles of the guinea-pig small intestine,Glenis J. Crane,W2083923834,7,2
+Manual calculation of treatment time for high dose rate brachytherapy with a flexible intraoperative template (FIT),L. Murrer,W2108543310,7,3
+Series model volume effects in a population of non-identical patients: how low is low?,John D. Fenwick,W2158184300,7,2
+Dose resolution in radiotherapy polymer gel dosimetry: effect of echo spacing in MRI pulse sequence,M Lepage C Baldock,W4241199795,7,1
+Analysis of photoneutron spectra produced in medical accelerators,C. Ongaro,W4253257541,7,0
+An<i>in vitro</i>system for the study of ultrasound contrast agents using a commercial imaging system,Vassilis Sboros,W2012221787,6,3
+Validation of blood product irradiation doses,T. Cheung,W2017652994,6,0
+Effects of parameter errors in the simulation of transcranial focused ultrasound,Timothy E Vaughan,W2036413170,6,0
+Recording accelerator monitor units during electronic portal imaging: application to collimator position verification during IMRT,A G Glendinning,W2051539699,6,5
+Blood flow velocity estimation from x-ray densitometric data: an efficient numerical scheme for the inverse advection problem,Laurent Sarry,W1973461005,5,1
+The measurement of thermal neutron flux depression for determining the concentration of boron in blood,S. L. Brooke,W1978286388,5,3
+Modelling pencil-beam divergence with the electron pencil-beam redefinition algorithm,Robert A. Boyd,W1993492102,5,1
+Anisotropy function for<sup>192</sup>Ir low-dose-rate brachytherapy sources: an EGS4 Monte Carlo study,R. Capote,W2005264154,5,3
+Approximate distribution of dose among foetal organs for radioiodine uptake via placenta transfer,R.K. Millard,W2095367153,5,2
+Verification of the super-omni wedge concept,Jianrong Dai,W2145945651,5,0
+<sup>7</sup>Li relaxation time measurements at very low magnetic field by<sup>1</sup>H dynamic nuclear polarization,Nadir Zeghib,W1978463459,3,1
+Phantom dosimetry for conformal stereotactic radiotherapy with a Head and Neck Localizer frame,B. Ravindran,W2081000225,4,0
+A rapid procedure for initial drug evaluation,A MacPherson,W2149297091,4,2
+EXAFS study on the local atomic structures around iron in glycosylated haemoglobin,Zhonghua Wu,W1975916708,3,0
+Photon scatter kernels for intensity modulating radiation therapy filters,Younes Mejaddem,W1976933596,3,2
+Rapid generation of preview images for real-time 3D MR angiography,Oliver Wieben,W2038728107,3,3
+Assessment of the linear reference air kerma rate of<sup>192</sup>Ir wires,José Pérez‐Calatayud,W2057420378,3,1
+Experimental determination of the overall perturbation factor for the NACP chamber in electron beams for<i>d</i><sub>max</sub>&lt;<i>d</i>⩽<i>d</i><sub>80</sub>,Chester S. Reft,W2086106365,3,2
+Absorbed fraction and dose conversion coefficients of alpha particles for radon dosimetry,D. Nikezić,W2114409494,3,0
+Visible dye light absorption properties of processed radiographic film,Tsang Cheung,W2150005853,2,1
+Radiotherapy Physics: in Practice (Second Edition),G. Pitchford,W2012621158,2,0
+The relative response of NE2561 and NE2611A ionization chambers in megavoltage x-ray beams,John F. Boas,W2021694457,2,1
+A practical approach to inverse planning for high-precision dose escalated conformal prostate radiotherapy,Tong San Koh,W2077473942,2,1
+Comparison of conversion factors for x-ray beams from a Philips SL15 and the NPL linear accelerator,R F Nutbrown,W2087601065,2,1
+Comment on genetic and global algorithms for optimization of three-dimensional conformal radiotherapy treatment planning,Jaap Vaarkamp,W2020998690,1,0
+Reply to `Comment on genetic and global algorithms for optimization of three-dimensional conformal radiotherapy treatment planning',Xingen Wu,W2070478328,1,0
+Optimizing the indexing of a resolution-enhancing tertiary collimator for radiotherapy,P Cooper,W2076772686,1,1
+Analysis of photoneutron spectra produced in medical accelerators. Corrigendum. 2000 Phys. Med. Biol. v. 45 (December) p. L55-L61,C. Ongaro,W3210093918,1,0
+Reconsideration of the backscatter components in the intermediate cavity theory for photon beams,Catalin Frujinoiu,W2071306329,0,0
+Anti-GQ1b ganglioside antibodies mediate complement-dependent destruction of the motor nerve terminal.,Graham M. O’Hanlon,W2124500858,0,0
+NOTE: Impedance magnetocardiogram,Akihiko Kandori,W2990455747,0,0
+The development of a phantom to determine foetal organ doses from 131 I in the foetal thyroid. Corrigendum. Phys. Med. Biol. v. 45 (September 2000) p. 2583-91,Neil O’Hare,W3211256511,0,0
+Author index,,W4244863630,0,0
