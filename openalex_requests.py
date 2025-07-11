@@ -97,7 +97,8 @@ sourcedict = [
 source_id  = sourcedict[0]['id']
 source_name = sourcedict[0]['name']
 
-YEAR_START=1957
+# YEAR_START=1957
+YEAR_START=2003
 YEAR_END=2019
 
 years = np.arange(YEAR_START,YEAR_END+1)
