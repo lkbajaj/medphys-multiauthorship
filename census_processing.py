@@ -46,5 +46,34 @@ with pd.ExcelWriter(output_excel, engine='xlsxwriter') as writer:
             }
             dfnew = pd.DataFrame(data)
             dfnew.to_excel(writer,sheet_name=str(year),index=False)
+            spreadsheetfilename = f'CITATIONJOURNALTRACKER_{year_start}-{year_end}.xlsx'
 
-os.rename(output_excel,f'CITATIONJOURNALTRACKER_{year_start}-{year_end}.xlsx')
+os.rename(output_excel,spreadsheetfilename)
+
+sources_net = {}
+with pd.ExcelWriter('PMBnetcitations.xlsx', engine='xlsxwriter') as writer:
+    for i in range(len(csv_files)):
+        df = pd.read_csv(file_path)
+        for index,row in df.iterrows():
+            journal_id = row['id']
+            citations = row['citations']
+
+            # initialize or add to dictionary 
+            if journal_id in sources_net.keys():
+                sources_net[journal_id]['citations'] += citations 
+            else: 
+                name = row['journal name']
+                sources_net[journal_id] = {'journal name':name,'citations':citations}
+    
+
+    citationtrackerdf = pd.DataFrame.from_dict(sources_net, orient='index')
+    citationtrackerdf.index.name = 'id'  # Rename index to 'id' (was source_id)
+
+    citationtrackerdf = citationtrackerdf.reset_index()
+    citationtrackerdf.rename(columns={'name': 'journal name', 'count': 'citations'}, inplace=True)
+    citationtrackerdf = citationtrackerdf[['journal name', 'id', 'citations']]
+
+    citationtrackerdf = citationtrackerdf.sort_values(by='citations', ascending=False)
+
+    citationtrackerdf.to_excel(writer,sheet_name='net',index=False)
+    
