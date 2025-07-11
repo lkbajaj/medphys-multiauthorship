@@ -1,4 +1,5 @@
 .venv
-spreadsheets/*.csv
+spreadsheets/authorship/*.csv
+spreadsheets/externaljournalcensus/*.csv
 .DS_Store
 sensitive.json
