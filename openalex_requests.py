@@ -91,14 +91,14 @@ def get_citation_counts(work_id):
 
 # get publications from the Physics in Medicine and Biology journal from the year 2000
 sourcedict = [
-    {'name':'Physics in Medicine and Biology','id':'S20241394','year_start':1956,'year_end':2019},
-    {'name':'Medical Physics','id':'S95522064'}
+    {'name':'Physics in Medicine and Biology','id':'S20241394','year_start':1956},
+    {'name':'Medical Physics','id':'S95522064','year_start':1974}
               ]
-source_id  = sourcedict[0]['id']
-source_name = sourcedict[0]['name']
+source_id  = sourcedict[1]['id']
+source_name = sourcedict[1]['name']
 
 # YEAR_START=1957
-YEAR_START=2003
+YEAR_START=2013
 YEAR_END=2019
 
 years = np.arange(YEAR_START,YEAR_END+1)

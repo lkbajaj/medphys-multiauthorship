@@ -1,8 +1,10 @@
 import pandas as pd
 import os
 
+JOURNAL_NAME = 'MP'
+
 csv_folder = 'spreadsheets/authorship/'
-output_excel = 'PMBcombo.xlsx'
+output_excel = f'spreadsheets/outputs-final/{JOURNAL_NAME}combo.xlsx'
 
 # sort the file names first
 csv_files = sorted(
@@ -31,4 +33,4 @@ with pd.ExcelWriter(output_excel, engine='xlsxwriter') as writer:
             df.to_excel(writer,sheet_name=str(year),index=False)
 
 
-os.rename(output_excel,f'PMBcombo_{year_start}-{year_end}.xlsx')
+os.rename(output_excel,f'spreadsheets/outputs-final/{JOURNAL_NAME}combo_{year_start}-{year_end}.xlsx')

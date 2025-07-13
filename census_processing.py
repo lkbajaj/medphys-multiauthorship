@@ -3,13 +3,14 @@ import os
 import pandas as pd
 import json
 
+JOURNAL_NAME  = 'MP'
 with open('sensitive.json','r') as file:
     data = json.load(file)
     EMAIL = data['email']
 
 # first start by replacing the ids with display names
 csv_folder = 'spreadsheets/externaljournalcensus/'
-output_excel = 'PMBcitationstracking.xlsx'
+output_excel = f'spreadsheets/outputs-final/{JOURNAL_NAME}citationstracking.xlsx'
 
 # sort the file names first
 csv_files = sorted(
@@ -46,12 +47,12 @@ with pd.ExcelWriter(output_excel, engine='xlsxwriter') as writer:
             }
             dfnew = pd.DataFrame(data)
             dfnew.to_excel(writer,sheet_name=str(year),index=False)
-            spreadsheetfilename = f'CITATIONJOURNALTRACKER_{year_start}-{year_end}.xlsx'
+            spreadsheetfilename = f'spreadsheets/outputs-final/{JOURNAL_NAME}CITATIONJOURNALTRACKER_{year_start}-{year_end}.xlsx'
 
 os.rename(output_excel,spreadsheetfilename)
 
 sources_net = {}
-with pd.ExcelWriter('PMBnetcitations.xlsx', engine='xlsxwriter') as writer:
+with pd.ExcelWriter(f'spreadsheets/outputs-final/{JOURNAL_NAME}netcitations.xlsx', engine='xlsxwriter') as writer:
     for i in range(len(csv_files)):
         df = pd.read_csv(file_path)
         for index,row in df.iterrows():
