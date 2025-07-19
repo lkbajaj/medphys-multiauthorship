@@ -4,9 +4,23 @@ import pandas as pd
 import numpy as np
 import json 
 
+# YEAR_START=1957
+YEAR_START=2018
+YEAR_END=2019
+
 with open('sensitive.json','r') as file:
     data = json.load(file)
     EMAIL = data['email']
+
+whitelistdf = pd.read_csv('WOS comparisons/whitelist.csv')
+issnl_list = np.asarray(whitelistdf['issn-l'])
+issne_list = np.asarray(whitelistdf['issn-e'])
+
+
+# some columns are left blank due to lack of data available. Remove nans
+issnl_list = np.array([x for x in issnl_list if pd.notna(x)])
+issne_list = np.array([x for x in issne_list if pd.notna(x)])
+
 
 def combinejournaldicts(jdict1, jdict2):
     for key, value in jdict2.items():
@@ -50,7 +64,6 @@ def get_citation_counts(work_id):
     response = requests.get(url)
     response.raise_for_status()
     result = response.json()
-    citations = result['cited_by_count']
     year = int(result['publication_year'])
 
     url = "https://api.openalex.org/works"
@@ -63,6 +76,7 @@ def get_citation_counts(work_id):
 
     journaltracker = {}
     citations5yr = 0
+    citations = 0
     for work in fetch_all_openalex_results(url,params):
         source_id = work.get('primary_location').get('source',None)
         source_info = work.get('primary_location', {}).get('source', {})
@@ -78,13 +92,24 @@ def get_citation_counts(work_id):
                     'name':source_info.get('display_name','')
                 }
             
-        pub_year = int(work.get("publication_year", None))
-        if pub_year is not None:
-            pub_year = int(pub_year) 
-            if pub_year <= year + 5:
-                citations5yr+=1
-    
+            pub_year = int(work.get("publication_year", None))
+            if pub_year is not None:
+                pub_year = int(pub_year)
 
+                # get issns from journal
+                url = f'https://api.openalex.org/sources/{source_id}'
+                params = {'mailto':EMAIL}
+
+                response = requests.get(url,params=params)
+                response.raise_for_status()
+                result = response.json()
+                issns = result.get('issn',None)
+                if issns is not None:
+                    onwhitelist = np.intersect1d(issns, np.concatenate((issnl_list, issne_list))).size > 0
+                    if onwhitelist:
+                        citations+=1
+                        if pub_year <= year + 5:
+                            citations5yr+=1
         
     return (citations,citations5yr,journaltracker)
 
@@ -94,12 +119,10 @@ sourcedict = [
     {'name':'Physics in Medicine and Biology','id':'S20241394','year_start':1956},
     {'name':'Medical Physics','id':'S95522064','year_start':1974}
               ]
-source_id  = sourcedict[1]['id']
-source_name = sourcedict[1]['name']
+source_id  = sourcedict[0]['id']
+source_name = sourcedict[0]['name']
 
-# YEAR_START=1957
-YEAR_START=2013
-YEAR_END=2019
+
 
 years = np.arange(YEAR_START,YEAR_END+1)
 
