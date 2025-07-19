@@ -7,10 +7,10 @@ with open('sensitive.json','r') as file:
     data = json.load(file)
     EMAIL = data['email']
 
-url = f'https://api.openalex.org/works/W2741809807'
+url = f'https://api.openalex.org/sources/s20241394'
 params = {'mailto':EMAIL}
 
 response = requests.get(url,params=params)
 response.raise_for_status()
 result = response.json()
-print(result)
+print(result.get('issn'))

@@ -25,11 +25,16 @@ for file in wos_files:
     df1 = pd.read_excel(f'WOS comparisons/PMB/PMB_wos_{year}.{file_ext}')
     doi = np.asarray(df1['DOI'])
     doi = 'https://doi.org/' + doi
+    
+    citationsall = np.asarray(df1['Times Cited, All Databases'])
+    citationscore = np.asarray(df1['Times Cited, WoS Core'])
 
     title = df1['Article Title']
     data = {
         'WoS title':title,
         'doi':doi,
+        'WoS citations all db':citationsall,
+        'WoS citations core':citationscore
     }
 
     df1 = pd.DataFrame(data)
