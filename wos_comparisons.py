@@ -6,7 +6,8 @@ import openpyxl
 JOURNAL_TITLE = 'Physics in Medicine and Biology'
 JOURNAL_TITLE_ABR= 'PMB'
 YEAR_START = 1999
-YEAR_END= 2019
+YEAR_END= 2000
+CURRENT_YEAR = 2025
 
 file_dir = f'spreadsheets/authorship/{JOURNAL_TITLE_ABR}'
 wos_file = f'WOS comparisons/wos-dois/WOS_PMB_98_20.csv'
@@ -27,7 +28,13 @@ with pd.ExcelWriter(output_excel_file, engine='xlsxwriter') as writer:
         openalex_df = openalex_df.rename(columns={'year':'openalex_year','title':'openalex_title','total citations':'openalex_citations'})
 
         merged_df = pd.merge(wos_df,openalex_df,on='doi',how='inner') # do the merge
-        merged_df = merged_df[['openalex_year','wos_year','openalex_title','wos_title','first author','total authors','doi','openalex_id','openalex_citations','wos_citations','citations_5yr']] # specify the ordering of the final dataframe
+        
+        column_order = ['openalex_year','wos_year','openalex_title','wos_title','first author','total authors','doi','openalex_id','openalex_citations','wos_citations','citations_5yr']
+        # loop through years so that I order the citation years correctly
+        column_order.extend(map(str,range(year,CURRENT_YEAR+1)))
+
+
+        merged_df = merged_df[column_order] # specify the ordering of the final dataframe
         merged_df.to_excel(writer,sheet_name=str(year),index=False)
 
 
