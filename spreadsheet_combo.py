@@ -1,7 +1,9 @@
 import pandas as pd
 import os
 
-JOURNAL_NAME = 'MP'
+# UPDATE TO MERGE FUNCTIONALITY. ALLOW MERGE FROM 1999-2019 timescale for PMB
+
+JOURNAL_NAME = 'PMB'
 
 csv_folder = 'spreadsheets/authorship/'
 output_excel = f'spreadsheets/outputs-final/{JOURNAL_NAME}combo.xlsx'
@@ -12,8 +14,8 @@ csv_files = sorted(
     key=lambda name: int(name.split('-')[-1].split('.')[0])
 )
 
-year_start = 9999
-year_end = 9999
+year_start = 1999
+year_end = 2019
 
 with pd.ExcelWriter(output_excel, engine='xlsxwriter') as writer:
     for i in range(len(csv_files)):
@@ -22,15 +24,9 @@ with pd.ExcelWriter(output_excel, engine='xlsxwriter') as writer:
         if filename.endswith('.csv'):
             file_path = os.path.join(csv_folder,filename)
             year = int(os.path.splitext(filename)[0].split('-')[-1])
-            print(year)
-
-            if i == 0:
-                year_start = year
-            elif i == len(csv_files)-1:
-                year_end = year
-
-            df = pd.read_csv(file_path)
-            df.to_excel(writer,sheet_name=str(year),index=False)
+            if year <= year_end and year >= year_start:
+                df = pd.read_csv(file_path)
+                df.to_excel(writer,sheet_name=str(year),index=False)
 
 
 os.rename(output_excel,f'spreadsheets/outputs-final/{JOURNAL_NAME}combo_{year_start}-{year_end}.xlsx')

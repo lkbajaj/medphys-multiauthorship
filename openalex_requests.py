@@ -5,8 +5,10 @@ import numpy as np
 import json 
 
 # YEAR_START=1957
-YEAR_START=2018
+YEAR_START=1999
 YEAR_END=2019
+CURRENT_YEAR = 2025
+
 
 with open('sensitive.json','r') as file:
     data = json.load(file)
@@ -57,7 +59,7 @@ def fetch_all_openalex_results(url,params,delay=0.5):
         params['cursor'] = cursor
         time.sleep(delay)
 
-def get_citation_counts(work_id):
+def get_citation_counts(work_id,curyear):
     # get year of the publication
     url = f'https://api.openalex.org/works/{work_id}'
 
@@ -74,23 +76,18 @@ def get_citation_counts(work_id):
     response = requests.get(url,params=params)
     response.raise_for_status()
 
-    journaltracker = {}
+    # journaltracker = {}
     citations5yr = 0
     citations = 0
+    # new: make a year tracker and initialize it!
+    year_tracker = {str(year): 0 for year in range(curyear,CURRENT_YEAR+1)}
     for work in fetch_all_openalex_results(url,params):
+        # DEPRICATED SOURCE TRACKING CENSUS
         source_id = work.get('primary_location').get('source',None)
         source_info = work.get('primary_location', {}).get('source', {})
         if source_id is not None:
             source_id = source_id.get('id',None)
         if source_id is not None:
-            source_id = source_id.split('https://openalex.org/')[1]
-            if source_id in journaltracker.keys():
-                journaltracker[source_id]['count'] +=1
-            else:
-                journaltracker[source_id] = {
-                    'count':1,
-                    'name':source_info.get('display_name','')
-                }
             
             pub_year = int(work.get("publication_year", None))
             if pub_year is not None:
@@ -107,11 +104,13 @@ def get_citation_counts(work_id):
                 if issns is not None:
                     onwhitelist = np.intersect1d(issns, np.concatenate((issnl_list, issne_list))).size > 0
                     if onwhitelist:
-                        citations+=1
-                        if pub_year <= year + 5:
-                            citations5yr+=1
+                        if pub_year >= curyear:
+                            citations+=1
+                            year_tracker[str(pub_year)] += 1
+                            if pub_year <= year + 5:
+                                citations5yr+=1
         
-    return (citations,citations5yr,journaltracker)
+    return (citations,citations5yr,year_tracker)
 
 
 # get publications from the Physics in Medicine and Biology journal from the year 2000
@@ -125,8 +124,6 @@ source_name = sourcedict[0]['name']
 
 
 years = np.arange(YEAR_START,YEAR_END+1)
-
-source_tracker_main = {}
 
 for year in years:
     year = int(year)
@@ -152,8 +149,7 @@ for year in years:
             first_author = ''
             num_authors = ''
 
-        citations,citations5yrs,source_tracker_temp = get_citation_counts(alexid)
-        combinejournaldicts(source_tracker_main,source_tracker_temp)
+        citations,citations5yrs,citation_year_tracker = get_citation_counts(alexid,year)
         
         rows.append({
             'title':name,
@@ -166,19 +162,10 @@ for year in years:
             'citations_5yr':citations5yrs
         })
 
+        rows[-1] = {**rows[-1],**citation_year_tracker}
         print(rows[-1])
 
     dfauthorship = pd.DataFrame(rows)
+    print(dfauthorship)
     dfauthorship.to_csv(f'spreadsheets/authorship/{source_name}-{year}.csv',index=False)
 
-
-    citationtrackerdf = pd.DataFrame.from_dict(source_tracker_main, orient='index')
-    citationtrackerdf.index.name = 'id'  # Rename index to 'id' (was source_id)
-
-    citationtrackerdf = citationtrackerdf.reset_index()
-    citationtrackerdf.rename(columns={'name': 'journal name', 'count': 'citations'}, inplace=True)
-    citationtrackerdf = citationtrackerdf[['journal name', 'id', 'citations']]
-
-    citationtrackerdf = citationtrackerdf.sort_values(by='citations', ascending=False)
-
-    citationtrackerdf.to_csv(f'spreadsheets/externaljournalcensus/CENSUS{source_name}-{year}.csv', index=False)
