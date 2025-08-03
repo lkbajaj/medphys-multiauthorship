@@ -5,7 +5,7 @@ import numpy as np
 import json 
 
 # YEAR_START=1957
-YEAR_START=1999
+YEAR_START=2011
 YEAR_END=2019
 CURRENT_YEAR = 2025
 
@@ -14,22 +14,9 @@ with open('sensitive.json','r') as file:
     data = json.load(file)
     EMAIL = data['email']
 
-whitelistdf = pd.read_csv('WOS comparisons/whitelist.csv')
-issnl_list = np.asarray(whitelistdf['issn-l'])
-issne_list = np.asarray(whitelistdf['issn-e'])
+whitelistdf = pd.read_csv('WOS comparisons/wos-dois/whitelist.csv')
+whitelist_source_ids = list(whitelistdf['oa-id'].dropna())
 
-
-# some columns are left blank due to lack of data available. Remove nans
-issnl_list = np.array([x for x in issnl_list if pd.notna(x)])
-issne_list = np.array([x for x in issne_list if pd.notna(x)])
-
-
-def combinejournaldicts(jdict1, jdict2):
-    for key, value in jdict2.items():
-        if key in jdict1:
-            jdict1[key]['count'] += value.get('count', 0)
-        else:
-            jdict1[key] = value.copy()
 
 # cursor method to get all papers, recommended by ChatGPT
 def fetch_all_openalex_results(url,params,delay=0.5):
@@ -45,8 +32,13 @@ def fetch_all_openalex_results(url,params,delay=0.5):
         params['filter'] = params['filter'] + ',primary_location.source.type:journal'
 
     while True:
-        response = requests.get(url,params=params)
-        response.raise_for_status()
+        try:
+            response = requests.get(url,params=params)
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            print(f"request failed {e}")
+            return e
+        
         data = response.json()
         results = data.get('results',[])
 
@@ -81,29 +73,19 @@ def get_citation_counts(work_id,curyear):
     citations = 0
     # new: make a year tracker and initialize it!
     year_tracker = {str(year): 0 for year in range(curyear,CURRENT_YEAR+1)}
-    for work in fetch_all_openalex_results(url,params):
-        # DEPRICATED SOURCE TRACKING CENSUS
+    works = fetch_all_openalex_results(url,params)
+    if isinstance(works, requests.exceptions.RequestException):
+        return works
+    for work in works:
         source_id = work.get('primary_location').get('source',None)
-        source_info = work.get('primary_location', {}).get('source', {})
         if source_id is not None:
             source_id = source_id.get('id',None)
-        if source_id is not None:
-            
-            pub_year = int(work.get("publication_year", None))
-            if pub_year is not None:
-                pub_year = int(pub_year)
-
-                # get issns from journal
-                url = f'https://api.openalex.org/sources/{source_id}'
-                params = {'mailto':EMAIL}
-
-                response = requests.get(url,params=params)
-                response.raise_for_status()
-                result = response.json()
-                issns = result.get('issn',None)
-                if issns is not None:
-                    onwhitelist = np.intersect1d(issns, np.concatenate((issnl_list, issne_list))).size > 0
-                    if onwhitelist:
+            if source_id is not None:
+                source_id = source_id.split('/')[-1]
+                pub_year = int(work.get("publication_year", None))
+                if pub_year is not None:
+                    pub_year = int(pub_year)
+                    if source_id in whitelist_source_ids: # count only citations whose sources are in the whitelist
                         if pub_year >= curyear:
                             citations+=1
                             year_tracker[str(pub_year)] += 1
@@ -118,8 +100,8 @@ sourcedict = [
     {'name':'Physics in Medicine and Biology','id':'S20241394','year_start':1956},
     {'name':'Medical Physics','id':'S95522064','year_start':1974}
               ]
-source_id  = sourcedict[0]['id']
-source_name = sourcedict[0]['name']
+source_id  = sourcedict[1]['id']
+source_name = sourcedict[1]['name']
 
 
 
@@ -135,7 +117,6 @@ for year in years:
     }
 
     rows = []
-
     for work in fetch_all_openalex_results(url,params):
         name = work['display_name']
         alexid = work['id'][21:]
@@ -148,8 +129,13 @@ for year in years:
         else:
             first_author = ''
             num_authors = ''
+        
 
-        citations,citations5yrs,citation_year_tracker = get_citation_counts(alexid,year)
+        citationcounts = get_citation_counts(alexid,year)
+        if isinstance(citationcounts, requests.exceptions.RequestException): # caught an exception. Go to the next one
+            next
+
+        citations,citations5yrs,citation_year_tracker = citationcounts
         
         rows.append({
             'title':name,

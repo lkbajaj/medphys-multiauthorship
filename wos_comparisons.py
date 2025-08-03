@@ -3,14 +3,14 @@ import numpy as np
 import os
 import openpyxl
 
-JOURNAL_TITLE = 'Physics in Medicine and Biology'
-JOURNAL_TITLE_ABR= 'PMB'
+JOURNAL_TITLE = 'Medical Physics'
+JOURNAL_TITLE_ABR= 'MP'
 YEAR_START = 1999
-YEAR_END= 2000
+YEAR_END= 2019
 CURRENT_YEAR = 2025
 
 file_dir = f'spreadsheets/authorship/{JOURNAL_TITLE_ABR}'
-wos_file = f'WOS comparisons/wos-dois/WOS_PMB_98_20.csv'
+wos_file = f'WOS comparisons/wos-dois/WOS_{JOURNAL_TITLE_ABR}_98_20.csv'
 output_excel_file = f'spreadsheets/outputs-final/{JOURNAL_TITLE_ABR}merged_{YEAR_START}-{YEAR_END}.xlsx'
 
 wos_df = pd.read_csv(wos_file)
@@ -30,8 +30,8 @@ with pd.ExcelWriter(output_excel_file, engine='xlsxwriter') as writer:
         merged_df = pd.merge(wos_df,openalex_df,on='doi',how='inner') # do the merge
         
         column_order = ['openalex_year','wos_year','openalex_title','wos_title','first author','total authors','doi','openalex_id','openalex_citations','wos_citations','citations_5yr']
-        # loop through years so that I order the citation years correctly
-        column_order.extend(map(str,range(year,CURRENT_YEAR+1)))
+ 
+        column_order.extend(map(str,range(year,CURRENT_YEAR+1)))        # loop through years so that I order the citation years correctly
 
 
         merged_df = merged_df[column_order] # specify the ordering of the final dataframe
