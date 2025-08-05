@@ -3,20 +3,20 @@ import numpy as np
 import os
 import openpyxl
 
-JOURNAL_TITLE = 'Medical Physics'
-JOURNAL_TITLE_ABR= 'MP'
+JOURNAL_TITLE = 'Physics Medica'
+JOURNAL_TITLE_ABR= 'PM'
 YEAR_START = 1999
 YEAR_END= 2019
 CURRENT_YEAR = 2025
 
 file_dir = f'spreadsheets/authorship/{JOURNAL_TITLE_ABR}'
 wos_file = f'WOS comparisons/wos-dois/WOS_{JOURNAL_TITLE_ABR}_98_20.csv'
-output_excel_file = f'spreadsheets/outputs-final/{JOURNAL_TITLE_ABR}merged_{YEAR_START}-{YEAR_END}.xlsx'
+output_excel_file = f'spreadsheets/outputs-final/{JOURNAL_TITLE_ABR}merged_{YEAR_START}-{YEAR_END}_CI.xlsx'
 
 wos_df = pd.read_csv(wos_file)
  
 # prepare wos dataframe for the merge
-wos_df['doi'] = 'https://doi.org/' + wos_df['doi'].astype(str) # add the beginning of the doi link so it matches with openalex that tracks the links
+wos_df['doi'] = ('https://doi.org/' + wos_df['doi'].astype(str)).str.lower() # add the beginning of the doi link so it matches with openalex that tracks the links
 wos_df = wos_df.rename(columns={'year':'wos_year','citations':'wos_citations','title':'wos_title'}) # rename the wos columns to differentiate them from the openalex ones
 wos_df = wos_df.drop(columns=['source.pages.count','authors','number.authors']) # get rid of extraneous columns
 
@@ -26,6 +26,7 @@ with pd.ExcelWriter(output_excel_file, engine='xlsxwriter') as writer:
 
         # prepare openalex dataframe for merge
         openalex_df = openalex_df.rename(columns={'year':'openalex_year','title':'openalex_title','total citations':'openalex_citations'})
+        openalex_df['doi'] = openalex_df['doi'].str.lower()
 
         merged_df = pd.merge(wos_df,openalex_df,on='doi',how='inner') # do the merge
         

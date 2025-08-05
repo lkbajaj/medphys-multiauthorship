@@ -5,7 +5,7 @@ import numpy as np
 import json 
 
 # YEAR_START=1957
-YEAR_START=2011
+YEAR_START=2018
 YEAR_END=2019
 CURRENT_YEAR = 2025
 
@@ -98,10 +98,11 @@ def get_citation_counts(work_id,curyear):
 # get publications from the Physics in Medicine and Biology journal from the year 2000
 sourcedict = [
     {'name':'Physics in Medicine and Biology','id':'S20241394','year_start':1956},
-    {'name':'Medical Physics','id':'S95522064','year_start':1974}
+    {'name':'Medical Physics','id':'S95522064','year_start':1974},
+    {'name':'Physics Medica','id':'S138998826'}
               ]
-source_id  = sourcedict[1]['id']
-source_name = sourcedict[1]['name']
+source_id  = sourcedict[2]['id']
+source_name = sourcedict[2]['name']
 
 
 
