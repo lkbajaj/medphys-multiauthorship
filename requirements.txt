@@ -3,3 +3,4 @@ numpy
 XlsxWriter
 xlrd
 openpyxl
+rapidfuzz

@@ -7,12 +7,14 @@ with open('sensitive.json','r') as file:
     data = json.load(file)
     EMAIL = data['email']
 
-url = f'https://api.openalex.org/sources?filter=issn:2053-1583'
+url = f'https://api.openalex.org/works/W2741809807'
 params = {'mailto':EMAIL}
 
 response = requests.get(url,params=params)
 response.raise_for_status()
 result = response.json()
-print(result.get('results',[])[0]['id'].split('/')[-1])
-# print(result.get('issn'))
+result = result.get('primary_location')
+result = result.get('source')
+print(result.get('is_indexed_in_scopus'))
+
 

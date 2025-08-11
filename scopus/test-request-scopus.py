@@ -17,14 +17,21 @@ headers = {
     "X-ELS-APIKey": key,  # your API key
     "Accept": "application/json"
 }
+<<<<<<< Updated upstream
 
 # get name of first author using Scopus
+=======
+>>>>>>> Stashed changes
 response = requests.get(url,headers=headers)
 data = response.json()
 authors = data['abstracts-retrieval-response']['coredata']['dc:creator']['author']
 first_author = authors[0]['ce:indexed-name']
 first_author = first_author.split(' ')[1] + ' ' + first_author.split(' ')[0]
+<<<<<<< Updated upstream
 
 # get the DOI
 
 # get the total number of citations
+=======
+print(first_author)
+>>>>>>> Stashed changes
