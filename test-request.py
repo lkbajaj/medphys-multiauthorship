@@ -7,7 +7,7 @@ with open('sensitive.json','r') as file:
     data = json.load(file)
     EMAIL = data['email']
 
-url = f'https://api.openalex.org/works/W2741809807'
+url = f'https://api.openalex.org/works/https://doi.org/10.1088/0031-9155/43/2/006'
 params = {'mailto':EMAIL}
 
 response = requests.get(url,params=params)
