@@ -117,78 +117,64 @@ def get_citation_counts(work_id, curyear, mode='default'):
 
 
 sourcedict = [
-    {'name':'Physics in Medicine and Biology','abrv':'PMB','id':'S20241394','year_start':1956},
-    {'name':'Medical Physics','abrv':'MP','id':'S95522064','year_start':1974},
+    {'name':'Physics in Medicine and Biology','id':'S20241394','year_start':1956},
+    {'name':'Medical Physics','id':'S95522064','year_start':1974},
     {'name':'Physica Medica','id':'S138998826'},  # corrected name
 ]
-source_id  = sourcedict[0]['id']
-source_name = sourcedict[0]['name']
-source_abrv = sourcedict[0]['abrv']
+source_id  = sourcedict[1]['id']
+source_name = sourcedict[1]['name']
 
 years = np.arange(YEAR_START, YEAR_END + 1)
 
+# new mode: read from WOS_PMB csv file
+wos_article_df = pd.read_csv('WOS comparisons/wos-dois/WOS_MP_98_20.csv')
+wos_article_df['year']  = wos_article_df['year'].astype(int)
+
 for year in years:
     year = int(year)
-    works = pd.read_excel(f'WOS comparisons/{source_abrv}_WOSmerged_1999-2019.xlsx',sheet_name=YEAR_START-year)
+    url = 'https://api.openalex.org/works'
+    rows = []
 
-    rows_all = []
-    rows_whitelist = []
-    rows_scopus = []
     try:
-        for index,row in works.iterrows():
-            name = row['openalex_title']
-            alexid = row['openalex_id']
-            doi = row['doi']
-            first_author = row['first_author']
-            num_authors = row['total authors']
-            wos_citations = row['wos_citations']
+        params = {
+            'filter':f'primary_location.source.id:{source_id},from_publication_date:{year}-01-01,to_publication_date:{year}-12-31',
+            'per-page':200,
+            'mailto':EMAIL
+        }
+    
+        works = fetch_all_openalex_results(url,params)
 
-            try:
-               
-                # One call per mode (you can refactor to one pass later)
-                citationcounts_scopus = get_citation_counts(alexid, year, mode='scopus')
 
-                def build_row(count_tuple):
-                    citations, citations5yrs, tracker = count_tuple
-                    base = {
-                        'title': name,
-                        'year': year,
-                        'first author': first_author,
-                        'total authors': num_authors,
-                        'doi': doi,
-                        'wos_citations':wos_citations,
-                        'openalex_id': alexid,
-                        'total citations': citations,
-                        'citations_5yr': citations5yrs,
-                        'flag':''
-                    }
-                    base.update(tracker)
-                    print(base)
-                    return base
-                
-                rows_scopus.append(build_row(citationcounts_scopus))
-            except Exception as e:
-                print(f'[ERROR] DOI failed: {doi}, {e}')
-                # add an effectively empty citation data in this row to show that there was an exception
-                base = {
-                    'title': name,
-                    'year': year,
-                    'first author': first_author,
-                    'total authors': num_authors,
-                    'doi': doi,
-                    'wos citations':wos_citations,
-                    'openalex_id': '',
-                    'total citations':'',
-                    'citations_5yr':'',
-                    'flag':repr(e)
-                }
-                print(base)
+        for work in works:
+            name = work['display_name']
+            alexid = work['id'][21:]
+            doi = work.get('doi','')
 
-                tracker = {str(y): 0 for y in range(year, CURRENT_YEAR + 1)}
-                base.update(tracker)
-                rows_scopus.append(base)
-                
-        dfauthorship_scopus = pd.DataFrame(rows_scopus)
-        dfauthorship_scopus.to_csv(f'spreadsheets/authorship/scopus/{source_name}-{year}.csv', index=False)
+            authorships = work.get('authorships',[])
+            if authorships:
+                first_author = authorships[0].get("author",{}).get('display_name')
+                num_authors = len(authorships)
+            else:
+                first_author = ''
+                num_authors = ''
+            
+            rows.append({
+                'title':name,
+                'year':year,
+                'first author':first_author,
+                'total authors':num_authors,
+                'doi':doi,
+                'openalex_id':alexid
+            })
+
+            print(rows[-1])
+    
     except Exception as e:
-        print(f"[ERROR] Year {year} failed: {e}")
+        print(str(e))
+
+    dfauthorship = pd.DataFrame(rows)
+    print(dfauthorship)
+    dfauthorship.to_csv(f'spreadsheets/authorship/MP/{source_name}-{year}.csv',index=False)
+
+
+
